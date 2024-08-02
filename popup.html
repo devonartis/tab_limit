@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tab Limit Manager</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 10px;
+        }
+
+        input {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Tab Limit Manager</h2>
+    <p>Current max tabs: <span id="currentMax"></span></p>
+    <label for="newMax">New max tabs (5-10):</label>
+    <input type="number" id="newMax" min="5" max="10">
+    <button id="updateMax">Update</button>
+    <script src="popup.js"></script>
+</body>
+
+</html>

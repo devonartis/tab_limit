@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Tab Limit Manager",
+    "version": "1.0",
+    "description": "Manages the number of open tabs in Chrome",
+    "permissions": ["tabs", "storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
