@@ -23,8 +23,15 @@ Tab Limit Manager is a Chrome extension designed to help users manage their brow
 
 1. Click on the extension icon in the Chrome toolbar to open the popup.
 2. The popup will display your current tab limit.
-3. To change the limit, enter a new value (between 5 and 10) in the input field and click "Update".
-4. When you try to open a tab beyond your set limit:
+3. To change the limit:
+   - Enter a new value between 5 and 10 in the "New max tabs" input field.
+   - Click the "Update" button.
+   - The "Current max tabs" display will update to show your new limit.
+4. To set the maximum limit of 10 tabs:
+   - Enter "10" in the "New max tabs" input field.
+   - Click the "Update" button.
+   - The "Current max tabs" display will change to 10.
+5. When you try to open a tab beyond your set limit:
    - The new tab will automatically close.
    - A warning popup will appear, informing you that you've reached your tab limit.
 
