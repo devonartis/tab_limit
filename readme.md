@@ -60,6 +60,7 @@ If you encounter any issues:
 
 Contributions to improve Tab Limit Manager are welcome. Please feel free to submit pull requests or open issues to suggest improvements or report bugs.
 
+
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the MIT License. For more details, see the [LICENSE](https://github.com/devonartis/tab_limit/blob/main/license.txt) file in the repository.
