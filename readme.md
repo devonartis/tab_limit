@@ -4,6 +4,8 @@
 
 Tab Limit Manager is a Chrome extension designed to help users manage their browser tabs more effectively. It allows users to set a maximum number of tabs (between 5 and 10) and prevents opening additional tabs beyond this limit. When the limit is reached, the extension displays a warning popup to inform the user.
 
+<img width="955" alt="image" src="https://github.com/user-attachments/assets/aa28c73a-37c8-4c36-9441-b5e920528bc2">
+
 ## Features
 
 - Set a custom tab limit (between 5 and 10 tabs)
