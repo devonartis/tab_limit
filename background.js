@@ -8,7 +8,7 @@ chrome.runtime.onInstalled.addListener(() => {
   
   chrome.tabs.onCreated.addListener((tab) => {
     if (isShowingWarning) {
-      return; // Ignore tab creation if we're showing the warning
+      return;
     }
   
     chrome.tabs.query({}, (tabs) => {
@@ -17,18 +17,22 @@ chrome.runtime.onInstalled.addListener(() => {
           chrome.tabs.remove(tab.id);
           
           isShowingWarning = true;
-          chrome.windows.create({
-            url: 'warning.html',
-            type: 'popup',
-            width: 300,
-            height: 200
-          }, (window) => {
-            // Listen for the warning window to close
-            chrome.windows.onRemoved.addListener(function listener(windowId) {
-              if (windowId === window.id) {
-                isShowingWarning = false;
-                chrome.windows.onRemoved.removeListener(listener);
-              }
+          
+          chrome.windows.getCurrent((currentWindow) => {
+            chrome.windows.create({
+              url: 'warning.html',
+              type: 'popup',
+              width: 300,
+              height: 200,
+              left: Math.round((currentWindow.width - 300) / 2 + currentWindow.left),
+              top: Math.round((currentWindow.height - 200) / 2 + currentWindow.top)
+            }, (popup) => {
+              chrome.windows.onRemoved.addListener(function listener(windowId) {
+                if (windowId === popup.id) {
+                  isShowingWarning = false;
+                  chrome.windows.onRemoved.removeListener(listener);
+                }
+              });
             });
           });
         }
@@ -36,3 +40,9 @@ chrome.runtime.onInstalled.addListener(() => {
     });
   });
   
+  // Add this message listener
+  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === "closeWarning") {
+      chrome.windows.remove(sender.tab.windowId);
+    }
+  });
